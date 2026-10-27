@@ -12,6 +12,7 @@ out/
 *.ipk
 !docs/webos/FreeMyTV-webos-*.ipk
 *.wgt
+android-sdk/
 __pycache__/
 
 # macOS

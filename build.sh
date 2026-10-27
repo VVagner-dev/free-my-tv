@@ -53,6 +53,8 @@ final class Config {
     static final String TMDB_KEY = "$(prop tmdb_key '')";
     static final String WATCHMODE_KEY = "$(prop watchmode_key '')";
     static final String FANART_KEY = "$(prop fanart_key '')";
+    static final String PLEX_URL = "$(prop plex_url '')";
+    static final String PLEX_TOKEN = "$(prop plex_token '')";
     static final String TMDB_REGION = "$(prop tmdb_region US)";
     static final String LATITUDE = "$LAT";
     static final String LONGITUDE = "$LON";
@@ -61,9 +63,12 @@ final class Config {
     static final String CURRENCY = "$(prop currency USD)";
     static final String TEMPERATURE = "$(prop temperature auto)";
     static final String HIDE_SERVICES = "$(prop hide_services '')";
+    static final String THEME = "$(prop theme auto)";
     static final boolean DISABLE_ASSISTANT = $ASSIST;
     static final boolean SHOW_CRYPTO = $CRYPTO;
     static final boolean HIDE_ANIMATION = $ANIMATION;
+    static final boolean SCREENSAVER = true;
+    static final boolean GENERIC = false;
 }
 EOF
 

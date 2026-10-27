@@ -66,6 +66,11 @@ final class Backdrop {
         return make(src, null, null, forLight);
     }
 
+    /** Compatibility for the photo screensaver: this renderer owns and releases the decoded source image. */
+    static Backdrop make(Bitmap src, boolean forLight, boolean own) {
+        return make(src, forLight);
+    }
+
     /** A horizontal background feeds the wide card; an optional vertical poster feeds the two tall cards. */
     static Backdrop make(Bitmap src, Bitmap poster, boolean forLight) {
         return make(src, poster, null, null, forLight);

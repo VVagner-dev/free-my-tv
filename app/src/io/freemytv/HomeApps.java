@@ -415,6 +415,18 @@ final class HomeApps {
         }
     }
 
+    /** Opens an app from a non-activity surface such as the screensaver (without a zoom origin). */
+    static boolean open(Context c, Item it, android.os.Bundle options) {
+        if (it.kind != APP) return false;
+        Intent intent = launchIntent(c.getPackageManager(), it.pkg);
+        if (intent == null) return false;
+        if (it.uri != null) intent = new Intent(Intent.ACTION_VIEW, android.net.Uri.parse(it.uri))
+                .addCategory(Intent.CATEGORY_BROWSABLE).setPackage(it.pkg);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        try { c.startActivity(intent, options); return true; }
+        catch (ActivityNotFoundException | SecurityException e) { return false; }
+    }
+
     /**
      * Live TV: tune the antenna input directly. MediaTek TV Center otherwise restores the last source used, which can
      * be HDMI, so its explicit activity receives the tuner URI. Other TV apps keep the standard channel-list request.

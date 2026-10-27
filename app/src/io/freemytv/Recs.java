@@ -43,6 +43,8 @@ import java.util.concurrent.Executors;
  */
 final class Recs {
     static final class Pick {
+        /** A locally imported photo, used only by the newer screensaver. */
+        File photo;
         int id;
         String kind;            // "movie" or "tv"
         String title, backdrop, poster, wide, logo, artId, meta = "", app, pkg;
@@ -50,6 +52,9 @@ final class Recs {
         float progress = -1;    // 0..1 only for Stremio's Continue Watching cards
         boolean detailed, fanartChecked;
     }
+
+    /** Upper bound used by the newer settings page; the home carousel itself remains a three-card window. */
+    static final int MAX_CARDS = 12;
 
     interface Listener { void onRecs(); }
     interface RandomListener { void onRandom(Pick pick, String error); }

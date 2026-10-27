@@ -1815,6 +1815,12 @@ final class HomeView extends ViewGroup implements Choreographer.FrameCallback, H
         gridDirty = true;
     }
 
+    /** Entry point for the app icon / external intent. */
+    void showAllApps() {
+        if (!running) return;
+        openSheet();
+    }
+
     private void closeSheet() {
         appMenuOpen = false;
         sheetOpen = false;

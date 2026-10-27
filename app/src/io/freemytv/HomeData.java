@@ -337,12 +337,16 @@ final class HomeData {
      * Uses the last weather fetched (it moves ~1 min a day); without data, 6:00 and 18:00.
      */
     boolean isNight(long now) {
-        String theme = Prefs.theme();
+        return isNight(Prefs.theme(), now, weather.sunrise, weather.sunset);
+    }
+
+    /** Shared by the sleep overlay, which receives the weather times in its Intent. */
+    static boolean isNight(String theme, long now, long sunrise, long sunset) {
         if (theme.equals("dark")) return true;
         if (theme.equals("light")) return false;
         long t = Shaders.timeOfDay(now, 0);
-        long rise = Shaders.timeOfDay(weather.sunrise, 6 * 60 * 60_000L);
-        long set = Shaders.timeOfDay(weather.sunset, 18 * 60 * 60_000L);
+        long rise = Shaders.timeOfDay(sunrise, 6 * 60 * 60_000L);
+        long set = Shaders.timeOfDay(sunset, 18 * 60 * 60_000L);
         return t < rise || t >= set;
     }
 

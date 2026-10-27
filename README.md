@@ -17,6 +17,15 @@ Open source. Built with Claude Code. One button to undo.
 
 ## What you get
 
+### Additions in this fork
+
+- **Stremio Continue Watching.** A personal row uses the Stremio account's resume state and opens the selected title in Stremio.
+- **Phone-friendly Stremio sign-in.** Home Settings can show a one-use QR code. It opens a page on a phone on the same home network; the link expires after five minutes and the password is never written to disk by Free My TV.
+- **Movie artwork tuned for TV.** TMDB posters and Fanart landscape art are used in the card shapes where they fit best.
+- **Random Stremio picks.** The die in the top bar offers a fresh set of titles; holding it lets you choose a genre.
+
+This is an independent personal fork. It keeps the original project's [MIT license](LICENSE) and credit.
+
 - **No ads.** No sponsored rows, banners or autoplaying promos. Not one.
 - **Your apps, front and center.** The streaming apps you actually use, on a glass shelf. Pick them and their order right on the TV.
 - **Trending, not sponsored.** Three fresh picks every hour (up to six, in Home Settings) from what's trending this week and the latest releases, only from apps you already have. Movies and Shows get their own tabs.
